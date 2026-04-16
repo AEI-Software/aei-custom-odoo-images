@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+
+if [ "${1:0:1}" = '-' ]; then
+    set -- odoo "$@"
+fi
+
+if [ "$1" = 'odoo' ]; then
+    set -- "$@" --addons-path="/mnt/extra-addons,/usr/lib/python3/dist-packages/odoo/addons"
+
+    if [[ "$*" != *"shell"* ]]; then
+        set -- "$@" -i odoo_setup_wizard
+    fi
+fi
+
+echo "[entrypoint] args: $*"
+exec /entrypoint.sh "$@"
