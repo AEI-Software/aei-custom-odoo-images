@@ -6,7 +6,7 @@ if [ "${1:0:1}" = '-' ]; then
 fi
 
 if [ "$1" = 'odoo' ]; then
-    set -- "$@" --addons-path="/mnt/extra-addons,/usr/lib/python3/dist-packages/odoo/addons"
+    set -- "$@" --addons-path="/opt/custom-addons,/mnt/extra-addons,/usr/lib/python3/dist-packages/odoo/addons"
 
     if [[ "$*" != *"shell"* ]]; then
         set -- "$@" -i odoo_setup_wizard
