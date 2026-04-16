@@ -1,37 +1,38 @@
 {
     'name': 'Odoo Setup Wizard',
-    'version': '1.0',
+    'version': '19.0.1.0.0',
     'category': 'Administration',
-    'summary': 'Asistente de configuración inicial para la empresa y módulos por defecto.',
-    'description': """
-        Este módulo automatiza la instalación de aplicaciones por defecto y
-        proporciona un asistente interactivo para configurar los datos básicos 
-        de la compañía (Logo, Nombre, Favicon) desde un solo lugar.
-    """,
-    'author': 'Custom Images',
+    'summary': 'Instalación automática de todas las apps community de Odoo 19 + asistente de empresa.',
+    'author': 'AEI Software',
     'depends': [
-        'base',
-        'web',
-        'crm', 
-        'sale_management', 
-        'point_of_sale', 
-        'account', 
-        'purchase', 
-        'stock', 
-        'maintenance', 
-        'repair', 
-        'project', 
-        'hr_timesheet', 
-        'hr', 
-        'hr_recruitment', 
-        'hr_holidays', 
-        'hr_attendance', 
-        'hr_expense', 
-        'fleet', 
-        'mail', 
-        'project_todo', 
-        'calendar', 
-        'contacts'
+        'base', 'web',
+        # CRM y Ventas
+        'crm', 'sale_management',
+        # Contabilidad
+        'account',
+        # Compras e Inventario
+        'purchase', 'stock',
+        # Punto de Venta
+        'point_of_sale',
+        # Fabricación y Operaciones
+        'mrp', 'maintenance', 'repair',
+        # Proyectos y Tareas
+        'project', 'project_todo',
+        # Suite RRHH
+        'hr', 'hr_timesheet', 'hr_recruitment',
+        'hr_holidays', 'hr_attendance', 'hr_expense',
+        # Flota
+        'fleet',
+        # Comunicación y Calendario
+        'mail', 'calendar', 'discuss',
+        # Marketing
+        'mass_mailing', 'survey', 'event',
+        # Sitio Web y eCommerce
+        'website', 'website_sale', 'website_event',
+        'website_slides', 'website_blog', 'website_forum',
+        'website_livechat',
+        # Productividad
+        'lunch', 'im_livechat', 'contacts',
     ],
     'data': [
         'security/ir.model.access.csv',
