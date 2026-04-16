@@ -2,16 +2,15 @@ FROM odoo:17.0
 
 USER root
 
-RUN mkdir -p /mnt/extra-addons
+RUN mkdir -p /opt/custom-addons
 
-# Módulo de autoconfiguración (instala todas las apps community de Odoo 17)
-COPY 17.0/custom_addons/odoo_setup_wizard /mnt/extra-addons/odoo_setup_wizard
+# Wizard en /opt/custom-addons — NO es sobreescrito por el emptyDir de K8s en /mnt/extra-addons
+COPY 17.0/custom_addons/odoo_setup_wizard /opt/custom-addons/odoo_setup_wizard
 
-# Entrypoint personalizado que inyecta -i odoo_setup_wizard en cada arranque
 COPY 17.0/entrypoint-custom.sh /entrypoint-custom.sh
 RUN chmod +x /entrypoint-custom.sh
 
-RUN chown -R odoo:odoo /mnt/extra-addons
+RUN chown -R odoo:odoo /opt/custom-addons
 
 USER odoo
 
