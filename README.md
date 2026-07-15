@@ -26,7 +26,7 @@ version: '3.8'
 services:
   web:
     # Selecciona el "tag" de la versión que quieres usar: 17.0, 18.0 o 19.0
-    image: ghcr.io/jpvargassoruco/custom-odoo-images:18.0
+    image: ghcr.io/aei-software/aei-custom-odoo-images:18.0
     depends_on:
       - db
     ports:
